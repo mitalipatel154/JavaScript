@@ -1,0 +1,125 @@
+// Fitness Suggestion System
+var age = parseInt(prompt("Enter your age : "));
+var weight = parseInt(prompt("enter your weight : "));
+var idealweight;
+
+if(age >= 5 && age <= 12)
+{
+    idealweight = 25;
+}
+else if(age >= 13 && age <= 19)
+{
+    idealweight = 50;
+}
+else if(age >= 20 && age <= 35)
+{
+    idealweight = 65;
+}
+else if(age >= 36 && age <= 50)
+{
+    idealweight = 70;
+}
+else if(age > 50)
+{
+    idealweight = 85;
+}
+else
+{
+    console.log("Invalid Age...")
+}
+
+
+if (idealweight)
+{
+    var underweight = idealweight - 5;
+    var overweight = idealweight + 5;
+
+    if(weight >= underweight && weight <= overweight)
+    {
+        console.log(`Your age is ${age} and your weight is ${weight}, You are fit for your age...`);
+    }    
+    else if(weight > overweight)
+    {
+        console.log(`Your age is ${age} and your weight is ${weight}, You are overweight for your age. Consider daily exercise and healthy diet...`);
+    }
+    else
+    {
+        console.log(`Your age is ${age} and your weight is ${weight},, You are underweight for your age. Consider a healthy diet.`)
+    }
+}
+
+
+
+// Monthly Budget Planner
+let income = parseInt(prompt("Enter your monthly income : "));
+
+if(income <= 10000)
+{
+    console.log("Spend cautiously and save more!");
+}
+else if(income >= 10000 && income < 30000)
+{
+    console.log(`Your monthly income is ${income}, budget balanced..`);
+}
+else if(income >= 30000)
+{
+    console.log(`Your monthly income is ${income}, consider investing...`)
+}
+else
+{
+    console.log(`Your monthly income is ${income}, invalid number..`);
+}
+
+
+
+// Mobile Data Usage Alert System
+let dataUsage = parseInt(prompt("Enter Total data you used in a month (in GB) : "));
+if(dataUsage < 5)
+{
+    console.log(`You used ${dataUsage} GB data, Low Usage!`);
+}
+else if(dataUsage >= 5 && dataUsage <= 15)
+{
+    console.log(`You used ${dataUsage} GB data, Normal Usage!`);
+}
+else if(dataUsage > 15)
+{
+    console.log(`You used ${dataUsage} GB data, You are a heavy data user. Upgrade your plan!`);
+}
+else
+{
+    console.log("invalid number..");
+}
+
+
+
+//  Change Password
+var setpassword = "rnw@123";
+var oldPassword = prompt("Enter Old Password : ");
+var newPassword = prompt("Enter New Password : ");
+var confirmPassword = prompt("confirm Password : ");
+
+if(setpassword === oldPassword)
+{
+    if(newPassword != oldPassword)
+    {
+        if(newPassword === confirmPassword)
+        {
+            setpassword = newPassword;
+            console.log("Your Password changed successfully...");
+            console.log(`Your New Password is : ${newPassword}`);
+        }
+        else
+        {
+            console.log("Your New Password and Confirm Password does is not match...")
+        }
+    }
+    else
+    {
+        console.log("Your Old password and New password are same..");
+    }
+}
+else
+{
+    console.log("Passwords do not match..");
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Café Billing System</title>
+</head>
+
+<body>
+    <script>
+        let totalAmount = 0, discount = 0, totalItem = 0, highestPrice = 0, lowestPrice = 0;
+        let setpassword = "1234";
+        let choice;
+        do {
+            choice = parseInt(prompt(
+                "Press 1 for Place Order\n" +
+                "Press 2 for View Bill\n" +
+                "Press 3 for Apply Discount\n" +
+                "Press 4 for Change Password\n" +
+                "Press 5 for View Café Report\n" +
+                "Press 0 for Exit\n\n" +
+                "Enter your choice : "
+            ));
+
+            if (choice === 1) {
+                let order
+                do {
+                    order = parseInt(prompt(
+                        "Press 1 for Coffee (₹50)\n" +
+                        "Press 2 for Tea (₹30)\n" +
+                        "Press 3 for Sandwich (₹80)\n" +
+                        "Press 4 for Pastry (₹100)\n" +
+                        "Press 0 for Exit\n\n" +
+                        "Enter your choice : "));
+
+                    if (order === 1) {
+                        console.log("You Ordered Coffee. Price...₹50");
+                        totalAmount += 50;
+                        totalItem++;
+
+                        if (50 > highestPrice) {
+                            highestPrice = 50;
+                        }
+
+                        if (lowestPrice === 0) {
+                            lowestPrice = 50;
+                        }
+                        else if (50 < lowestPrice) {
+                            lowestPrice = 50;
+                        }
+                    }
+                    else if (order === 2) {
+                        console.log("Your Orderd Tea. Price...₹30");
+                        totalAmount += 30;
+                        totalItem++;
+
+                        if (30 > highestPrice) {
+                            highestPrice = 30;
+                        }
+
+                        if (lowestPrice === 0) {
+                            lowestPrice = 30;
+                        }
+                        else if (30 < lowestPrice) {
+                            lowestPrice = 30;
+                        }
+                    }
+                    else if (order === 3) {
+                        console.log("Your Orderd Sandwich. Price...₹80");
+                        totalAmount += 80;
+                        totalItem++;
+
+                        if (80 > highestPrice) {
+                            highestPrice = 80;
+                        }
+
+                        if (lowestPrice === 0) {
+                            lowestPrice = 80;
+                        }
+                        else if (80 < lowestPrice) {
+                            lowestPrice = 80;
+                        }
+                    }
+                    else if (order === 4) {
+                        console.log("Your Orderd Pastry. Price...₹100");
+                        totalAmount += 100;
+                        totalItem++;
+
+                        if (100 > highestPrice) {
+                            highestPrice = 100;
+                        }
+
+                        if (lowestPrice === 0) {
+                            lowestPrice = 100;
+                        }
+                        else if (100 < lowestPrice) {
+                            lowestPrice = 100;
+                        }
+                    }
+                    else if (order !== 0) {
+                        console.log("Invalid choice...");
+                    }
+
+                } while (order !== 0)
+            }
+            else if (choice === 2) {
+                // View Bill
+                console.log("=== View Bill ===");
+                console.log(`Items Ordered : ${totalItem}`);
+                console.log(`Subtotal : ₹${totalAmount}`);
+            }
+            else if (choice === 3) {
+                // Apply Discount
+                if (totalAmount > 1000) {
+                    discount = totalAmount * 0.20;
+                    console.log("20% Discount Applied...");
+                }
+                else if (totalAmount > 500) {
+                    discount = totalAmount * 0.10;
+                    console.log("10% Discount Applied...");
+                }
+                else {
+                    discount = 0;
+                    console.log("No Discount Applied...");
+                }
+
+                console.log(`You have ordered ${totalItem} items`);
+                console.log(`Subtotal : ₹${totalAmount}`);
+                console.log(`Discount : ₹${discount}`);
+
+                let afterDiscount = totalAmount - discount;
+                let gst = afterDiscount * 0.05;
+                console.log(`GST (5%) : ₹${gst.toFixed(2)}`);
+
+                let grandTotal = afterDiscount + gst;
+                console.log(`Your Total Bill is : ₹${grandTotal.toFixed(2)}`);
+            }
+            else if (choice === 4) {
+                // Change Password
+                var oldPassword = prompt("Enter Old Password : ");
+                var newPassword = prompt("Enter New Password : ");
+                var confirmPassword = prompt("confirm Password : ");
+
+                if (setpassword === oldPassword) {
+                    if (newPassword != oldPassword) {
+                        if (newPassword === confirmPassword) {
+                            setpassword = newPassword;
+                            console.log("Your Password changed successfully...");
+                            console.log(`Your New Password is : ${newPassword}`);
+                        }
+                        else {
+                            console.log("Your New Password and Confirm Password do not match...")
+                        }
+                    }
+                    else {
+                        console.log("Your Old password and New password are same..");
+                    }
+                }
+                else {
+                    console.log("Passwords do not match..");
+                }
+            }
+            else if (choice === 5) {
+                // Cafe Report
+                console.log("=== Cafe Report ===");
+                if (totalItem > 0) {
+                    let avgItemPrice = totalAmount / totalItem;
+                    console.log(`Total Item Sold : ${totalItem}`);
+                    console.log(`Highest Price Item : ${highestPrice}`);
+                    console.log(`Lowest Price Item : ${lowestPrice}`);
+                    console.log(`Average Price : ${avgItemPrice.toFixed(2)}`);
+                }
+                else {
+                    console.log("No Sales Made.");
+                }
+            }
+            else if (choice === 0) {
+                console.log("Thank You, Visit Again");
+            }
+            else {
+                console.log("Invalid choice...");
+            }
+
+        } while (choice !== 0)
+
+    </script>
+</body>
+
+</html>

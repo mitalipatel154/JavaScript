@@ -56,24 +56,9 @@ The program allows customers to order items, calculates the bill, applies discou
   - If valid → Password updated successfully  
 
 ---
+## 📸 Output Screenshots 
 
-## 📸 Output Screenshots
-
-**1. Bill Calculation**  
-
-![Bill Output](screenshots/view_bill.png)
-
-**2. Discount System**  
-
-![Menu Output](screenshots/discount.png)
-
-**3. Café Report**  
-
-![Report Output](screenshots/report.png)
-
-**4. Password Change**  
-
-![Password Output](screenshots/change_password.png)
+![Program Output](screenshots/output.png)
 
 ---
 

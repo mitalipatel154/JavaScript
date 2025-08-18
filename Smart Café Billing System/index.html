@@ -36,6 +36,7 @@
 
                     if (order === 1) {
                         console.log("You Ordered Coffee. Price...₹50");
+                        document.write("You Ordered Coffee. Price...₹50<br>");
                         totalAmount += 50;
                         totalItem++;
 
@@ -51,7 +52,8 @@
                         }
                     }
                     else if (order === 2) {
-                        console.log("Your Orderd Tea. Price...₹30");
+                        console.log("You Orderd Tea. Price...₹30");
+                        document.write("You Orderd Tea. Price...₹30<br>");
                         totalAmount += 30;
                         totalItem++;
 
@@ -67,7 +69,8 @@
                         }
                     }
                     else if (order === 3) {
-                        console.log("Your Orderd Sandwich. Price...₹80");
+                        console.log("You Orderd Sandwich. Price...₹80");
+                        document.write("You Orderd Sandwich. Price...₹80<br>");
                         totalAmount += 80;
                         totalItem++;
 
@@ -83,7 +86,8 @@
                         }
                     }
                     else if (order === 4) {
-                        console.log("Your Orderd Pastry. Price...₹100");
+                        console.log("You Orderd Pastry. Price...₹100");
+                        document.write("You Orderd Pastry. Price...₹100<br>");
                         totalAmount += 100;
                         totalItem++;
 
@@ -100,6 +104,7 @@
                     }
                     else if (order !== 0) {
                         console.log("Invalid choice...");
+                        document.write("Invalid choice...<br>");
                     }
 
                 } while (order !== 0)
@@ -109,32 +114,45 @@
                 console.log("=== View Bill ===");
                 console.log(`Items Ordered : ${totalItem}`);
                 console.log(`Subtotal : ₹${totalAmount}`);
+
+                document.write("<br>=== View Bill ===<br>");
+                document.write(`Items Ordered : ${totalItem}<br>`);
+                document.write(`Subtotal : ₹${totalAmount}<br>`);
             }
             else if (choice === 3) {
                 // Apply Discount
                 if (totalAmount > 1000) {
                     discount = totalAmount * 0.20;
                     console.log("20% Discount Applied...");
+                    document.write("20% Discount Applied...<br>");
                 }
                 else if (totalAmount > 500) {
                     discount = totalAmount * 0.10;
                     console.log("10% Discount Applied...");
+                    document.write("10% Discount Applied...<br>");
                 }
                 else {
                     discount = 0;
                     console.log("No Discount Applied...");
+                    document.write("No Discount Applied...<br>");
                 }
 
                 console.log(`You have ordered ${totalItem} items`);
                 console.log(`Subtotal : ₹${totalAmount}`);
                 console.log(`Discount : ₹${discount}`);
 
+                document.write(`You have ordered ${totalItem} items<br>`);
+                document.write(`Subtotal : ₹${totalAmount}<br>`);
+                document.write(`Discount : ₹${discount}<br>`);
+
                 let afterDiscount = totalAmount - discount;
                 let gst = afterDiscount * 0.05;
                 console.log(`GST (5%) : ₹${gst.toFixed(2)}`);
+                document.write(`GST (5%) : ₹${gst.toFixed(2)}<br>`);
 
                 let grandTotal = afterDiscount + gst;
                 console.log(`Your Total Bill is : ₹${grandTotal.toFixed(2)}`);
+                document.write(`Your Total Bill is : ₹${grandTotal.toFixed(2)}<br>`);
             }
             else if (choice === 4) {
                 // Change Password
@@ -148,38 +166,53 @@
                             setpassword = newPassword;
                             console.log("Your Password changed successfully...");
                             console.log(`Your New Password is : ${newPassword}`);
+
+                            document.write("<br>Your Password changed successfully...<br>");
+                            document.write(`Your New Password is : ${newPassword}<br>`);
                         }
                         else {
                             console.log("Your New Password and Confirm Password do not match...")
+                            document.write("Your New Password and Confirm Password do not match...<br>")
                         }
                     }
                     else {
                         console.log("Your Old password and New password are same..");
+                        document.write("Your Old password and New password are same..<br>");
                     }
                 }
                 else {
                     console.log("Passwords do not match..");
+                    document.write("Passwords do not match..<br>");
                 }
             }
             else if (choice === 5) {
                 // Cafe Report
                 console.log("=== Cafe Report ===");
+                document.write("<br>=== Cafe Report ===<br>");
                 if (totalItem > 0) {
                     let avgItemPrice = totalAmount / totalItem;
                     console.log(`Total Item Sold : ${totalItem}`);
                     console.log(`Highest Price Item : ${highestPrice}`);
                     console.log(`Lowest Price Item : ${lowestPrice}`);
                     console.log(`Average Price : ${avgItemPrice.toFixed(2)}`);
+
+                    document.write(`Total Item Sold : ${totalItem}<br>`);
+                    document.write(`Highest Price Item : ${highestPrice}<br>`);
+                    document.write(`Lowest Price Item : ${lowestPrice}<br>`);
+                    document.write(`Average Price : ${avgItemPrice.toFixed(2)}<br>`);
                 }
                 else {
                     console.log("No Sales Made.");
+                    document.write("No Sales Made.<br>");
                 }
             }
             else if (choice === 0) {
                 console.log("Thank You, Visit Again");
+                document.write("<br>Thank You, Visit Again<br>");
             }
             else {
                 console.log("Invalid choice...");
+                document.write("Invalid choice...<br>");
             }
 
         } while (choice !== 0)

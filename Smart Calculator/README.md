@@ -45,6 +45,12 @@ It uses **DOM manipulation** and simple **JavaScript functions** to handle calcu
 
 ---
 
+## 📸 Output Screenshots 
+
+![Program Output](screenshots/Calc_output.png)
+
+---
+
 ## 🚀 How to Run
 1. Clone or download this repository.  
 2. Open `index.html` in any browser.  

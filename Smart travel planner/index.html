@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Smart Travel Planner</title>
+    </head>
+
+    <body>
+        <script>
+            let destinationNum = parseInt(prompt("Enter the total number of destinations for your trip (3-5) : "));
+            let destinations = [];
+            for(let i = 0; i < destinationNum; i++)
+            {
+                let place = prompt(`Enter destination ${i+1} : `);
+                destinations.push(place);
+            }
+
+
+            let budget = parseInt(prompt("Enter Your Budget : "));
+            let budgetMsg = "";
+            if(budget < 10000)
+            {
+                budgetMsg = "Plan a short domestic trip.";
+            }
+            else if(budget >= 10000 && budget <= 50000)
+            {
+                budgetMsg = "You can paln a long domestic trip.";
+            }
+            else
+            {
+                budgetMsg = "International trip possible!";
+            }
+
+
+            let days = parseInt(prompt("Enter Number of travel days : "));
+            let travelDays = "";
+            if(days < 3)
+            {
+                travelDays = "Weekend Getaway.";
+            }
+            else if(days >= 3 && days <= 7)
+            {
+                travelDays = "Perfect Holiday Trip.";
+            }
+            else
+            {
+                travelDays = "Extended Vacation.";
+            }
+
+
+            let hotelSuggestion = (budget, days) => {
+                let perDayBudget = budget / days;
+                if(perDayBudget < 2000)
+                {
+                    return "budget Hotel";
+                }
+                else if(perDayBudget >= 2000 && perDayBudget <= 5000)
+                {
+                    return "Mid-range Hotels.";
+                }
+                else
+                {
+                    return "Luxury Hotels";
+                }
+            };
+            let hotel = hotelSuggestion(budget, days);
+
+
+            console.log(`Destination Entered : [${destinations.toString()}]`);
+            console.log(`Total Budget : [${budget}]`);
+            console.log(`Days Planned : [${days}]`);
+            console.log(`Hotel Suggestion : [${hotel}]`);
+            console.log(`Trip Type : [${budgetMsg}]`);
+
+        </script>
+    </body>
+
+</html>

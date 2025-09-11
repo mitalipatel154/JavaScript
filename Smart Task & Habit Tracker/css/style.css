@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+    height: 100vh;
+}
+
+.progress-fill {
+    height: 100%;
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.task-info {
+    max-width: 70%;
+}
+
+.task-status {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.status-completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-overdue {
+    background: #f8d7da;
+    color: #721c24;
+}

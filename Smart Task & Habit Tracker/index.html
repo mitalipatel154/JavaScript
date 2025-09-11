@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Smart Task & Habit Tracker</title>
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body class="p-4">
+        <section>
+            <div class="container align-items-center">
+                <h1 class="pb-2">Smart Task & Habit Tracker</h1>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card p-3 shadow-sm border border-success-subtle">
+                            <h2 class="h5 pb-2">Add Task / Habit</h2>
+                            <form id="taskForm">
+                                <input required id="title" placeholder="Title" class="form-control mb-2" />
+                                <textarea id="description" placeholder="Description" rows="2"
+                                    class="form-control mb-2"></textarea>
+                                <input id="category" placeholder="Category" class="form-control mb-2" />
+                                <input id="dueDate" type="date" class="form-control mb-2" />
+                                <select id="type" class="form-control mb-2">
+                                    <option value="task">Task</option>
+                                    <option value="habit">Habit</option>
+                                </select>
+                                <button class="btn btn-success w-100" type="submit">Add</button>
+                            </form>
+                        </div>
+                        <div class="card p-3 mt-1 shadow-sm border border-success-subtle">
+                            <h2 class="h5 pb-2">Search & Filters</h2>
+                            <input id="searchInput" placeholder="Search by title or category" class="form-control mb-2" />
+                            <select id="statusFilter" class="form-control mb-2">
+                                <option value="all">All</option>
+                                <option value="pending">Pending</option>
+                                <option value="completed">Completed</option>
+                                <option value="overdue">Overdue</option>
+                            </select>
+                            <select id="categoryFilter" class="form-control">
+                                <option value="all">All Categories</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card p-3 shadow-sm border border-success-subtle">
+                            <h2 class="h5 pb-2">Task List</h2>
+                            <div id="tasksContainer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container mt-4">
+                <div class="card p-3 shadow-sm border border-success-subtle">
+                    <h2 class="h5 pb-2">Dashboard</h2>
+                    <div class="row text-center">
+                        <div class="col-3">
+                            <div>Total Tasks</div>
+                            <div id="totalTasks" class="fw-bold">0</div>
+                        </div>
+                        <div class="col-3">
+                            <div>Completed</div>
+                            <div id="completedTasks" class="fw-bold">0</div>
+                        </div>
+                        <div class="col-3">
+                            <div>Pending</div>
+                            <div id="pendingTasks" class="fw-bold">0</div>
+                        </div>
+                        <div class="col-3">
+                            <div>Overdue</div>
+                            <div id="overdueTasks" class="fw-bold">0</div>
+                        </div>
+                    </div>
+                    <div class="progress mt-3">
+                        <div id="progressBar" class="progress-fill"></div>
+                    </div>
+                    <div id="progressText" class="mt-2">Progress: 0%</div>
+                </div>
+            </div>
+        </section>
+
+
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./js/script.js"></script>
+    </body>
+</html>

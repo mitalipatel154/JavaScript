@@ -1,0 +1,83 @@
+body{
+    background: linear-gradient(45deg, rgba(142, 197, 252, 1.000) 0.000%, rgba(141, 211, 255, 1.000) 25.000%, rgba(161, 216, 255, 1.000) 50.000%, rgba(193, 210, 255, 1.000) 75.000%, rgba(224, 195, 255, 1.000) 100.000%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    height: 100px;
+}
+#countdown{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 20px 0;
+    color: #9274d3;
+}
+.countdown-section{
+    background-color: #ffffff;
+    width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px 0px rgba(100, 100, 100, 0.7);
+}
+h2{
+    font-size: 30px;
+    color: #4d4d4d;
+}
+button{
+    background: #50aaff;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    padding: 15px 35px;
+    margin: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .3s;
+}
+button:hover{
+    background: #2695fd;
+}
+#quote{
+    font-size: 30px;
+    margin: 30px 0;
+    color: #9274d3;
+    font-weight: 700;
+}
+.quotes{
+    background-color: #ffffff;
+    width: 800px;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px 0px rgba(100, 100, 100, 0.7);
+}
+#modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+#modalContent{
+    width: 500px;
+    background: #fff;
+    color: #333;
+    padding: 20px 50px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+#closeModal{
+    margin-top: 15px;
+    background: #dc143c;
+    color: #fff;
+    padding: 15px 35px;
+    transition: all .3s;
+}
+#closeModal:hover{
+    background-color: #ff2551;
+}

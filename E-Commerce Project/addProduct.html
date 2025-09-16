@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product</title>
+        <!-- Bootstrap css -->
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+        <!-- custom css -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary navbar-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Jewelry Store</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="./cart.html">View Cart</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="mt-5">
+                <div class="container">
+                    <div class="row justify-content-center" id="productList">
+                        <div class="col-8">
+                            <div class="card px-5 py-4">
+                                <form class="row g-3">
+                                    <h2 class="text-center py-2">Add Products</h2>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Products Name</label>
+                                        <input type="text" class="form-control" id="productName" placeholder="Enter Product Name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Product Price</label>
+                                        <input type="number" class="form-control" id="price" placeholder="Enter Product Price">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Product Image URL</label>
+                                        <input type="text" class="form-control" id="image" placeholder="Enter Product URL">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Product Description</label>
+                                        <textarea name="" class="form-control" id="productDesc" placeholder="Enter Product Description"></textarea>
+                                    </div>
+                                    
+                                    
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">Add Product</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+
+
+        <!-- Bootstrap js -->
+        <script src="./assets/js/bootstrap.bundle.min.js"></script>
+        <!-- custom js -->
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>

@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Jewelry Store</title>
+        <!-- Bootestrap icon css -->
+        <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
         <!-- Bootstrap css -->
         <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
         <!-- custom css -->
@@ -13,7 +15,7 @@
         <header>
             <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary navbar-dark">
                 <div class="container">
-                    <a class="navbar-brand" href="#">Jewelry Store</a>
+                    <a class="navbar-brand" href="./index.html">Jewelry Store</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -36,53 +38,10 @@
             </nav>
         </header>
         <main>
-            <section>
+            <section class="bg-image">
                 <div class="container">
-                    <div class="row mt-5">
-                        <div class="col-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="row mt-5" id="productList">
+                       
                     </div>
                 </div>
             </section>
@@ -94,5 +53,10 @@
         <script src="./assets/js/bootstrap.bundle.min.js"></script>
         <!-- custom js -->
         <script src="./assets/js/script.js"></script>
+        <script>
+            viewProduct(); 
+            showProductAtHome();
+            addToCart();
+        </script>
     </body>
 </html>

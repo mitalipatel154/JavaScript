@@ -15,7 +15,7 @@
         <header>
             <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary navbar-dark">
                 <div class="container">
-                    <a class="navbar-brand" href="#">Jewelry Store</a>
+                    <a class="navbar-brand" href="./index.html">Jewelry Store</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -40,8 +40,12 @@
                     <div class="row justify-content-center" id="productList">
                         <div class="col-8">
                             <div class="card px-5 py-4">
-                                <form class="row g-3">
+                                <form class="row g-3" id="productForm">
                                     <h2 class="text-center py-2">Add Products</h2>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Products ID</label>
+                                        <input type="number" class="form-control" id="productId" placeholder="Enter Product ID">
+                                    </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Products Name</label>
                                         <input type="text" class="form-control" id="productName" placeholder="Enter Product Name">
@@ -50,7 +54,7 @@
                                         <label class="form-label">Product Price</label>
                                         <input type="number" class="form-control" id="price" placeholder="Enter Product Price">
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-md-6">
                                         <label class="form-label">Product Image URL</label>
                                         <input type="text" class="form-control" id="image" placeholder="Enter Product URL">
                                     </div>
@@ -83,23 +87,8 @@
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Earings</td>
-                                        <td>500</td>
-                                        <td>
-                                            <img src="./assets/images/earings.jpeg" alt="" class="img-thumbnail p-0" width="150px">
-                                        </td>
-                                        <td>
-                                            <button class="btn-warning">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </button>
-                                            <button class="btn-danger">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                <tbody id="productTable">
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -114,5 +103,9 @@
         <script src="./assets/js/bootstrap.bundle.min.js"></script>
         <!-- custom js -->
         <script src="./assets/js/script.js"></script>
+        <script>
+            addProducts();
+            viewProduct();
+        </script>
     </body>
 </html>

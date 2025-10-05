@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Search (Lat & Lon)</title>
+    <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+    <h1>Search Weather by Coordinates</h1>
+    
+    <div class="search">
+        <input type="number" id="lat" placeholder="Enter Latitude...">
+        <input type="number" id="lon" placeholder="Enter Longitude...">
+        <button id="searchBtn">Search</button>
+    </div>
+    
+    <div id="result"></div>
+
+    <script>
+        const apiKey = "bbe6f193b5a349a58a4caeedf9cf4e6e";
+
+        document.getElementById("searchBtn").addEventListener("click", () => {
+        const lat = document.getElementById("lat").value.trim();
+        const lon = document.getElementById("lon").value.trim();
+
+        if (!lat || !lon) {
+            alert("Please enter both latitude and longitude!");
+            return;
+        }
+        searchWeather(lat, lon);
+        });
+
+        async function searchWeather(lat, lon) {
+            try {
+                const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+                const res = await fetch(url);
+                if (!res.ok) throw new Error("Invalid coordinates");
+                const data = await res.json();
+
+                console.log(data);
+
+                document.getElementById("result").innerHTML = `
+                <h2>${data.name ? data.name + "," : ""} ${data.sys.country || ""}</h2>
+                <b>Latitude:</b> ${lat}<br>
+                <b>Longitude:</b> ${lon} <br>
+                <b>Temperature:</b> ${data.main.temp}°C <br>
+                <b>Weather:</b> ${data.weather[0].description} <br>
+                <b>Humidity:</b> ${data.main.humidity}% <br>
+                <b>Wind Speed:</b> ${data.wind.speed} m/s
+                `;
+            } catch (err) {
+                console.error(err);
+                document.getElementById("result").innerHTML = "Error fetching data.";
+            }
+        }
+    </script>
+    </body>
+</html>
